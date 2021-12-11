@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="styles.css" />
+		<title>Webview UI Toolkit Snapshot Tests</title>
+	</head>
+	<body>
+		<h1 id="title">Webview UI Toolkit Snapshot Tests</h1>
+		<p>This page contains all Webview UI Toolkit component variants that will be tested using Playwright.</p>
+		<h2>Badge</h2>
+		<section class="component-container">
+			<vscode-badge id="badge">100</vscode-badge>
+		</section>
+		<h2>Button</h2>
+		<section class="component-container">
+			<vscode-button id="primary-btn">Hello World</vscode-button>
+			<vscode-button id="secondary-btn" appearance="secondary">Hello World</vscode-button>
+			<vscode-button id="disabled-btn" disabled>Hello World</vscode-button>
+			<vscode-button id="with-start-icon-btn">
+				Button Text
+				<span slot="start" class="codicon codicon-add"></span>
+			</vscode-button>
+			<vscode-button id="icon-button" appearance="icon" aria-label="Confirm">
+				<span class="codicon codicon-check"></span>
+			</vscode-button>
+		</section>
+		<script type="module" src="main.ts"></script>
+	</body>
+</html>
