@@ -10,3 +10,4 @@ coverage
 .storybook/
 # don't lint stories
 *.stories.*
+tests

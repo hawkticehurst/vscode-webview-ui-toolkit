@@ -31,6 +31,12 @@
 			"options": {
 				"printWidth": 200
 			}
+		},
+		{
+			"files": "tests/index.html",
+			"options": {
+				"printWidth": 200
+			}
 		}
 	]
 }

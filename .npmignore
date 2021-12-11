@@ -11,6 +11,8 @@ CONTRIBUTING.md
 # Tests
 *.spec.*
 coverage/
+tests/
+test-results/
 
 # Builds
 build/
