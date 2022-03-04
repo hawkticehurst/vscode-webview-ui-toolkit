@@ -13,10 +13,14 @@ CONTRIBUTING.md
 coverage/
 tests/
 test-results/
+test-webview
 
 # Builds
 build/
 storybook-static/
+
+# Scripts
+scripts
 
 # Config files
 .vscode
@@ -29,6 +33,7 @@ storybook-static/
 babel.config.js
 tsconfig.json
 tsconfig.build.json
+tsconfig.eslint.json
 webpack.config.js
 rollup.config.js
 policheck

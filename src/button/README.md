@@ -2,7 +2,48 @@
 
 The `vscode-button` is a web component implementation of a [button element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button). The `vscode-button` also supports several visual appearances––primary, secondary, and icon.
 
-## Attributes
+![Button hero](/docs/assets/images/button-hero.png)
+
+## Usage
+
+### Types
+
+| Type      | Example                                                                                               | Usage                                                                              |
+| --------- | ----------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| Primary   | <img src="../../docs/assets/images/button-types-primary.png" alt="Primary button" width="100px"/>     | Emphasizes the highest priority action in a view.                                  |
+| Secondary | <img src="../../docs/assets/images/button-types-secondary.png" alt="Secondary button" width="100px"/> | Used for additional actions in a view that already features a primary action.      |
+| Icon      | <img src="../../docs/assets/images/button-types-icon.png" alt="Icon button" width="50px"/>            | A space-efficient style that renders a single icon to represent a specific action. |
+
+### Best Practices
+
+| ❌ Don't                                                           | ✅ Do                                                                              |
+| ------------------------------------------------------------------ | ---------------------------------------------------------------------------------- |
+| ![Multiple primary buttons](/docs/assets/images/button-dont-1.png) | ![One primary and multiple secondary buttons](/docs/assets/images/button-do-1.png) |
+| Don't use multiple primary buttons in close proximity.             | Provide a single primary button with one or more secondary actions                 |
+
+| ❌ Don't                                                                | ✅ Do                                                               |
+| ----------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| ![Buttons with incorrect casing](/docs/assets/images/button-dont-2.png) | ![Buttons with correct casing](/docs/assets/images/button-do-2.png) |
+| Don't use fully capitalized or lowercase text.                          | Use sentence case for all button text.                              |
+
+| ❌ Don't                                                            | ✅ Do                                                                                          |
+| ------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| ![Button with a vague label](/docs/assets/images/button-dont-3.png) | ![Button with a clear label](/docs/assets/images/button-do-3.png)                              |
+| Don't use vague action text.                                        | Use clear verbs like "Save" or "Cancel" to ensure users feel confident when peforming actions. |
+
+| ❌ Don't                                                                                    | ✅ Do                                                                                  |
+| ------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| ![Button used as a link](/docs/assets/images//button-dont-4.png)                            | ![Button clearly associated with the view above](/docs/assets/images//button-do-4.png) |
+| Don't use buttons as navigational elements. Use a [vscode-link](../link/README.md) instead. | Use buttons to perform actions relevant to the current view.                           |
+
+| ❌ Don't                                                                       | ✅ Do                                                                                                       |
+| ------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------- |
+| ![Icon button used for primary action](/docs/assets/images//button-dont-5.png) | ![Icon buttons in a group](/docs/assets/images//button-do-5.png)                                            |
+| Don't use an icon button for primary actions.                                  | Use icon buttons for supporting actions in space-constrained layouts. Use icons that convey clear outcomes. |
+
+## Implementation
+
+### Attributes
 
 | Attribute        | Type    | Description                                                                             |
 | ---------------- | ------- | --------------------------------------------------------------------------------------- |
@@ -20,9 +61,7 @@ The `vscode-button` is a web component implementation of a [button element](http
 | `type`           | string  | See [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attributes). |
 | `value`          | string  | See [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attributes). |
 
-## Usage
-
-### Basic Usage
+### Basic Button
 
 [Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-button--default)
 
@@ -40,7 +79,7 @@ There are a number of visual appearances that the `vscode-button` can have. The 
 <vscode-button appearance="primary">Button Text</vscode-button>
 <vscode-button appearance="secondary">Button Text</vscode-button>
 <vscode-button appearance="icon">
-	<span class="codicon codicon-check"></span>
+  <span class="codicon codicon-check"></span>
 </vscode-button>
 ```
 
@@ -70,8 +109,8 @@ An icon can be added to the left of Button text by adding an element with the at
 <!-- Note: Using Visual Studio Code Codicon Library -->
 
 <vscode-button>
-	Button Text
-	<span slot="start" class="codicon codicon-add"></span>
+  Button Text
+  <span slot="start" class="codicon codicon-add"></span>
 </vscode-button>
 ```
 
@@ -93,6 +132,6 @@ For example, if you're using an icon button to confirm a state change, adding an
 <!-- Note: Using Visual Studio Code Codicon Library -->
 
 <vscode-button appearance="icon" aria-label="Confirm">
-	<span class="codicon codicon-check"></span>
+  <span class="codicon codicon-check"></span>
 </vscode-button>
 ```

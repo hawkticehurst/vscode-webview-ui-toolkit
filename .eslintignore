@@ -4,10 +4,16 @@ node_modules
 dist
 # don't lint build folder output
 build
+react
 # don't lint coverage output
 coverage
 # don't lint storybook files
 .storybook/
 # don't lint stories
 *.stories.*
+# don't lint tests
 tests
+# don't lint scripts folder
+scripts
+# don't lint webview test environment
+test-webview

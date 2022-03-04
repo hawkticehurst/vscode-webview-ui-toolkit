@@ -4,9 +4,27 @@
 import {create} from './utilities/design-tokens/create';
 
 /**
+ * Developer note:
+ *
+ * There are some tokens defined in this file that make use of `--fake-vscode-token`. This is
+ * done when a toolkit token should be added to the tokenMappings map (and subsequently altered
+ * in the applyTheme function) but does not have a corresponding VS Code token that can be used.
+ *
+ * An example is buttonIconHoverBackground token which does not have a corresponding VS Code token
+ * at this time (it's a hardcoded value in VS Code), but needs to be adjusted to be transparent when a
+ * high contrast theme is applied.
+ *
+ * As a rule of thumb, if there are special cases where a token needs to be adjusted based on the
+ * VS Code theme and does not have a corresponding VS Code token, `--fake-vscode-token` can be used
+ * to indicate that it should be added to the tokenMappings map and thus make it accessible to the
+ * applyTheme function where it can be dynamically adjusted.
+ */
+
+/**
  * Global design tokens.
  */
 
+export const background = create<string>('background', '--vscode-editor-background').withDefault('#1e1e1e');
 export const borderWidth = create<number>('border-width').withDefault(1);
 export const contrastActiveBorder = create<string>('contrast-active-border', '--vscode-contrastActiveBorder').withDefault('#f38518');
 export const contrastBorder = create<string>('contrast-border', '--vscode-contrastBorder').withDefault('#6fc3df');
@@ -29,6 +47,11 @@ export const typeRampMinus2FontSize = create<string>('type-ramp-minus2-font-size
 export const typeRampMinus2LineHeight = create<string>('type-ramp-minus2-line-height').withDefault('16px');
 export const typeRampPlus1FontSize = create<string>('type-ramp-plus1-font-size').withDefault('16px');
 export const typeRampPlus1LineHeight = create<string>('type-ramp-plus1-line-height').withDefault('24px');
+export const scrollbarWidth = create<string>('scrollbarWidth').withDefault('10px');
+export const scrollbarHeight = create<string>('scrollbarHeight').withDefault('10px');
+export const scrollbarSliderBackground = create<string>('scrollbar-slider-background', '--vscode-scrollbarSlider-background').withDefault('#79797966');
+export const scrollbarSliderHoverBackground = create<string>('scrollbar-slider-hover-background', '--vscode-scrollbarSlider-hoverBackground').withDefault('#646464b3');
+export const scrollbarSliderActiveBackground = create<string>('scrollbar-slider-active-background', '--vscode-scrollbarSlider-activeBackground').withDefault('#bfbfbf66');
 
 /**
  * Badge design tokens.
@@ -46,7 +69,8 @@ export const buttonBorder = create<string>('button-border', '--vscode-button-bor
 export const buttonIconBackground = create<string>('button-icon-background').withDefault('transparent');
 export const buttonIconCornerRadius = create<string>('button-icon-corner-radius').withDefault('5px');
 export const buttonIconFocusBorderOffset = create<number>('button-icon-outline-offset').withDefault(0);
-export const buttonIconHoverBackground = create<string>('button-icon-hover-background').withDefault('rgba(90, 93, 94, 0.31)');
+// Note usage of `--fake-vscode-token` (refer to doc comment at top of file for explanation).
+export const buttonIconHoverBackground = create<string>('button-icon-hover-background', '--fake-vscode-token').withDefault('rgba(90, 93, 94, 0.31)');
 export const buttonIconPadding = create<string>('button-icon-padding').withDefault('3px');
 export const buttonPrimaryBackground = create<string>('button-primary-background', '--vscode-button-background').withDefault('#0e639c');
 export const buttonPrimaryForeground = create<string>('button-primary-foreground', '--vscode-button-foreground').withDefault('#ffffff');
@@ -73,7 +97,6 @@ export const checkboxForeground = create<string>('checkbox-foreground', '--vscod
 export const listActiveSelectionBackground = create<string>('list-active-selection-background', '--vscode-list-activeSelectionBackground').withDefault('#094771');
 export const listActiveSelectionForeground = create<string>('list-active-selection-foreground', '--vscode-list-activeSelectionForeground').withDefault('#ffffff');
 export const listHoverBackground = create<string>('list-hover-background', '--vscode-list-hoverBackground').withDefault('#2a2d2e');
-export const quickInputBackground = create<string>('quick-input-background', '--vscode-quickInput-background').withDefault('#252526');
 
 /**
  * Divider design tokens.
@@ -102,8 +125,8 @@ export const inputPlaceholderForeground = create<string>('input-placeholder-fore
  * Link design tokens.
  */
 
-export const linkActiveForeground = create<string>('link-foreground', '--vscode-textLink-activeForeground').withDefault('#3794ff');
-export const linkForeground = create<string>('link-active-foreground', '--vscode-textLink-foreground').withDefault('#3794ff');
+export const linkActiveForeground = create<string>('link-active-foreground', '--vscode-textLink-activeForeground').withDefault('#3794ff');
+export const linkForeground = create<string>('link-foreground', '--vscode-textLink-foreground').withDefault('#3794ff');
 
 /**
  * Progress ring design tokens.

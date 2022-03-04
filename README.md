@@ -6,7 +6,7 @@
 ![Toolkit CI Status](https://github.com/microsoft/vscode-webview-ui-toolkit/actions/workflows/ci.yml/badge.svg)
 ![Deploy Docs Status](https://github.com/microsoft/vscode-webview-ui-toolkit/actions/workflows/docs-cd.yml/badge.svg)
 
-![Webview Toolkit for Visual Studio Code Artwork](./docs/assets/toolkit-artwork.png)
+![Webview Toolkit for Visual Studio Code Artwork](./docs/assets/images/toolkit-artwork.png)
 
 ## Introduction
 
@@ -24,12 +24,6 @@ Note that this doesn't change our recommendation of [avoiding the use of webview
 ## Release
 
 The Webview UI Toolkit is currently in a public preview with the goal of reaching `v1.0` sometime in Winter 2022.
-
-### Known issues
-
-Medium to high-visibility issues that are intended to be fixed with high priority.
-
--   Options within `vscode-dropdown` do not announce their text content on selection change [#181](https://github.com/microsoft/vscode-webview-ui-toolkit/issues/181)
 
 ## Getting started
 
