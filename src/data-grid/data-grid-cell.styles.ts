@@ -35,8 +35,6 @@ export const dataGridCellStyles = (
 		font-weight: 400;
 		border: solid calc(${borderWidth} * 1px) transparent;
 		border-radius: calc(${cornerRadius} * 1px);
-		white-space: wrap;
-		overflow-wrap: anywhere;
 	}
 	:host(.column-header) {
 		font-weight: 600;
@@ -53,5 +51,10 @@ export const dataGridCellStyles = (
 	:host(:focus) ::slotted(*),
 	:host(:active) ::slotted(*) {
 		color: ${listActiveSelectionForeground} !important;
+	}
+	slot {
+		white-space: pre-line;
+    display: flex;
+		overflow-wrap: anywhere;
 	}
 `;
